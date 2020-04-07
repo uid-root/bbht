@@ -21,6 +21,13 @@ Bug Bounty Hunting Tools is a script to install the most popular tools used whil
 - Waybackurls
 - Httprobe
 - Seclists collection
+- ffuf
+- Amass
+- sslScrape
+- assets-from-spf
+- commonspeak2
+- 86a06c5dc309d08580a018c66354a056
+- CT_subdomains
 
 This script also grabs the aliases created and published here:
 https://github.com/nahamsec/recon_profile
