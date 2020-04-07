@@ -28,9 +28,9 @@ echo "done"
 
 
 #install go
-sudo add-apt-repository ppa:longsleep/golang-backports
+sudo add-apt-repository -y ppa:longsleep/golang-backports
 sudo apt update
-sudo apt install golang-go
+sudo apt -y install golang-go
 
 
 #Don't forget to set up AWS credentials!
