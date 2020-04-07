@@ -1,6 +1,5 @@
 #!/bin/bash
-sudo apt-get -y update
-sudo apt-get -y upgrade
+sudo apt-get -y update && sudo apt-get -y dist-upgrade
 
 
 sudo apt-get install -y libcurl4-openssl-dev
@@ -29,36 +28,9 @@ echo "done"
 
 
 #install go
-if [[ -z "$GOPATH" ]];then
-echo "It looks like go is not installed, would you like to install it now"
-PS3="Please select an option : "
-choices=("yes" "no")
-select choice in "${choices[@]}"; do
-        case $choice in
-                yes)
-
-					echo "Installing Golang"
-					wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
-					sudo tar -xvf go1.13.4.linux-amd64.tar.gz
-					sudo mv go /usr/local
-					export GOROOT=/usr/local/go
-					export GOPATH=$HOME/go
-					export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-					echo 'export GOROOT=/usr/local/go' >> ~/.bash_profile
-					echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile			
-					echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile	
-					source ~/.bash_profile
-					sleep 1
-					break
-					;;
-				no)
-					echo "Please install go and rerun this script"
-					echo "Aborting installation..."
-					exit 1
-					;;
-	esac	
-done
-fi
+sudo add-apt-repository ppa:longsleep/golang-backports
+sudo apt update
+sudo apt install golang-go
 
 
 #Don't forget to set up AWS credentials!
@@ -183,6 +155,56 @@ cd ~/tools/SecLists/Discovery/DNS/
 ##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
 cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
 cd ~/tools/
+echo "done"
+
+
+echo "installing ffuf"
+go get github.com/ffuf/ffuf
+echo "done"
+
+echo "installing Amass"
+https://github.com/OWASP/Amass
+echo "done"
+
+
+echo "installing sslScrape"
+git clone https://github.com/cheetz/sslScrape.git
+cd ~/tools/sslScrape
+pip install ndg-httpsclient
+pip install python-masscan
+cd ~/tools/
+echo "done"
+
+
+echo "installing assets-from-spf"
+git clone https://github.com/0xbharath/assets-from-spf.git
+cd ~/tools/assets-from-spf
+pipenv install
+cd ~/tools/
+echo "done"
+
+
+
+echo "downloading commonspeak2"
+cd ~/tools/
+git clone https://github.com/assetnote/commonspeak2.git
+echo "done"
+
+
+echo "downloading commonspeak2-wordlists"
+cd ~/tools/
+https://github.com/assetnote/commonspeak2-wordlists.git
+echo "done"
+
+echo "downloading 86a06c5dc309d08580a018c66354a056"
+cd ~/tools/
+mkdir 86a06c5dc309d08580a018c66354a056
+wget https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
+echo "done"
+
+echo "downloading CT_subdomains"
+cd ~/tools/
+https://github.com/internetwache/CT_subdomains.git
 echo "done"
 
 
