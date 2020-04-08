@@ -31,6 +31,8 @@ echo "done"
 sudo add-apt-repository -y ppa:longsleep/golang-backports
 sudo apt update
 sudo apt -y install golang-go
+sudo export GOROOT=~/go
+sudo export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 
 #Don't forget to set up AWS credentials!
