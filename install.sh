@@ -31,9 +31,18 @@ echo "done"
 sudo add-apt-repository -y ppa:longsleep/golang-backports
 sudo apt update
 sudo apt -y install golang-go
-sudo export GOROOT=~/go
-sudo export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
+#set path
+echo "Setting path values"
+echo "Old paths:"
+echo ' '
+echo $PATH
+export GOROOT=~/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$PATH:/snap/bin
+echo "New paths:"
+echo ' '
+echo $PATH
 
 #Don't forget to set up AWS credentials!
 echo "Don't forget to set up AWS credentials!"
