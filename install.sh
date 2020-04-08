@@ -42,7 +42,9 @@ echo "Don't forget to set up AWS credentials!"
 
 #create a tools folder in ~/
 mkdir ~/tools
+mkdir ~/tools/wordlists
 cd ~/tools/
+
 
 #install aquatone
 echo "Installing Aquatone"
@@ -149,9 +151,9 @@ git clone https://github.com/nahamsec/crtndstry.git
 echo "done"
 
 echo "downloading Seclists"
-cd ~/tools/
+cd ~/tools/wordlists
 git clone https://github.com/danielmiessler/SecLists.git
-cd ~/tools/SecLists/Discovery/DNS/
+cd ~/tools/wordlists/SecLists/Discovery/DNS/
 ##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
 cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
 cd ~/tools/
@@ -189,20 +191,23 @@ echo "done"
 
 
 echo "downloading commonspeak2"
-cd ~/tools/
+cd ~/tools/wordlists/
 git clone https://github.com/assetnote/commonspeak2.git
+cd ~/tools/
 echo "done"
 
 
 echo "downloading commonspeak2-wordlists"
-cd ~/tools/
+cd ~/tools/wordlists/
 git clone https://github.com/assetnote/commonspeak2-wordlists.git
+cd ~/tools/
 echo "done"
 
 echo "downloading 86a06c5dc309d08580a018c66354a056"
 cd ~/tools/
-mkdir 86a06c5dc309d08580a018c66354a056
+cd ~/tools/wordlists
 wget https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
+cd ~/tools/
 echo "done"
 
 echo "downloading CT_subdomains"
