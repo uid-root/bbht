@@ -163,7 +163,10 @@ go get github.com/ffuf/ffuf
 echo "done"
 
 echo "installing Amass"
-https://github.com/OWASP/Amass
+git clone https://github.com/OWASP/Amass.git
+cd ~/tools/Amass
+go install ./...
+cd ~/tools/
 echo "done"
 
 
@@ -193,7 +196,7 @@ echo "done"
 
 echo "downloading commonspeak2-wordlists"
 cd ~/tools/
-https://github.com/assetnote/commonspeak2-wordlists.git
+git clone https://github.com/assetnote/commonspeak2-wordlists.git
 echo "done"
 
 echo "downloading 86a06c5dc309d08580a018c66354a056"
@@ -204,7 +207,7 @@ echo "done"
 
 echo "downloading CT_subdomains"
 cd ~/tools/
-https://github.com/internetwache/CT_subdomains.git
+git clone https://github.com/internetwache/CT_subdomains.git
 echo "done"
 
 
