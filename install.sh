@@ -167,10 +167,7 @@ go get github.com/ffuf/ffuf
 echo "done"
 
 echo "installing Amass"
-git clone https://github.com/OWASP/Amass.git
-cd ~/tools/Amass
-go install ./...
-cd ~/tools/
+sudo snap install amass
 echo "done"
 
 
