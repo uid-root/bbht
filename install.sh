@@ -146,41 +146,44 @@ cd ~/tools/
 echo "done"
 
 echo "installing httprobe"
+cd ~/tools/
 go get -u github.com/tomnomnom/httprobe 
 echo "done"
 
 echo "installing unfurl"
+cd ~/tools/
 go get -u github.com/tomnomnom/unfurl 
 echo "done"
 
 echo "installing waybackurls"
+cd ~/tools/
 go get github.com/tomnomnom/waybackurls
 echo "done"
 
 echo "installing crtndstry"
+cd ~/tools/
 git clone https://github.com/nahamsec/crtndstry.git
 echo "done"
 
-echo "downloading Seclists"
-cd ~/tools/wordlists
-git clone https://github.com/danielmiessler/SecLists.git
-cd ~/tools/wordlists/SecLists/Discovery/DNS/
-##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
-cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
-cd ~/tools/
-echo "done"
-
-
 echo "installing ffuf"
+cd ~/tools/
 go get github.com/ffuf/ffuf
 echo "done"
 
 echo "installing Amass"
-sudo snap install amass
+cd ~/tools/
+snap install amass
+echo "done"
+
+
+echo "installing subfinder"
+cd ~/tools/
+go get -u -v github.com/projectdiscovery/subfinder/cmd/subfinder
 echo "done"
 
 
 echo "installing sslScrape"
+cd ~/tools/
 git clone https://github.com/cheetz/sslScrape.git
 cd ~/tools/sslScrape
 pip install ndg-httpsclient
@@ -197,6 +200,14 @@ cd ~/tools/
 echo "done"
 
 
+echo "downloading Seclists"
+cd ~/tools/wordlists
+git clone https://github.com/danielmiessler/SecLists.git
+cd ~/tools/wordlists/SecLists/Discovery/DNS/
+##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
+cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
+cd ~/tools/
+echo "done"
 
 echo "downloading commonspeak2"
 cd ~/tools/wordlists/
