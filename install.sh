@@ -181,6 +181,11 @@ cd ~/tools/
 go get -u -v github.com/projectdiscovery/subfinder/cmd/subfinder
 echo "done"
 
+echo "installing gobuster"
+cd ~/tools/
+go get github.com/OJ/gobuster
+echo "done"
+
 
 echo "installing sslScrape"
 cd ~/tools/
