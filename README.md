@@ -18,6 +18,7 @@ Bug Bounty Hunting Tools is a script to install the most popular tools used whil
 - wpscan
 - webscreenshot
 - Massdns
+- Masscan
 - Asnlookup
 - Unfurl
 - Waybackurls
