@@ -31,8 +31,8 @@ Bug Bounty Hunting Tools is a script to install the most popular tools used whil
 - 86a06c5dc309d08580a018c66354a056
 - CT_subdomains
 - subfinder
+- subbrute
 - gobuster
-- CeWL
 
 This script also grabs the aliases created and published here:
 https://github.com/nahamsec/recon_profile
