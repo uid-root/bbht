@@ -181,6 +181,13 @@ cd ~/tools/
 go get -u -v github.com/projectdiscovery/subfinder/cmd/subfinder
 echo "done"
 
+echo "installing subbrute"
+cd ~/tools/
+apt install -y python-dnspython
+git clone https://github.com/TheRook/subbrute.git
+echo "done"
+
+
 echo "installing gobuster"
 cd ~/tools/
 go get github.com/OJ/gobuster
