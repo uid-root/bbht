@@ -260,6 +260,13 @@ echo "~/tools/masscan/bin/masscan"  >> tools.txt
 echo "done"
 
 
+echo "installing subjack"
+cd ~/tools/
+go get github.com/haccer/subjack
+echo "done"
+
+
+
 
 
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
