@@ -247,7 +247,17 @@ git clone https://github.com/internetwache/CT_subdomains.git
 echo "done"
 
 
-
+echo "Installing masscan"
+cd ~/tools/
+apt install -y git gcc make libpcap-dev
+git clone https://github.com/robertdavidgraham/masscan
+cd masscan
+make -j
+cd ~/tools/
+echo " " >> tools.txt
+echo "Masscan:" >> tools.txt
+echo "~/tools/masscan/bin/masscan"  >> tools.txt
+echo "done"
 
 
 
