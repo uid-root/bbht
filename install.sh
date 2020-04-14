@@ -247,14 +247,6 @@ git clone https://github.com/internetwache/CT_subdomains.git
 echo "done"
 
 
-cd ~/tools/
-git clone https://github.com/digininja/CeWL.git
-cd CeWL
-gem install bundler
-gem install --user-install spider http_configuration mini_exiftool zip mime mime-types
-bundle install
-ruby -W0 ./cewl.rb
-cd ~/tools/
 
 
 
