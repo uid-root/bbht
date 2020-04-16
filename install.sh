@@ -179,7 +179,13 @@ echo "done"
 
 echo "installing subfinder"
 cd ~/tools/
-go get -u -v github.com/projectdiscovery/subfinder/cmd/subfinder
+mkdir subfinder
+cd subfinder
+wget https://github.com/projectdiscovery/subfinder/releases/download/v2.3.2/subfinder-linux-amd64.tar
+tar -xzvf subfinder-linux-amd64.tar
+rm subfinder-linux-amd64.tar
+mv subfinder-linux-amd64 subfinder
+./subfinder
 echo "done"
 
 echo "installing subbrute"
