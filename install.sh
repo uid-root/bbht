@@ -3,34 +3,34 @@
 apt -y update && apt -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
 
 
-sudo apt-get install -y libcurl4-openssl-dev
-sudo apt-get install -y libssl-dev
-sudo apt-get install -y jq
-sudo apt-get install -y ruby-full
-sudo apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
-sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
-sudo apt-get install -y python-setuptools
-sudo apt-get install -y libldns-dev
-sudo apt-get install -y python3-pip
-sudo apt-get install -y python-pip
-sudo apt-get install -y python-dnspython
-sudo apt-get install -y git
-sudo apt-get install -y rename
-sudo apt-get install -y xargs
+apt-get install -y libcurl4-openssl-dev
+apt-get install -y libssl-dev
+apt-get install -y jq
+apt-get install -y ruby-full
+apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
+apt-get install -y build-essential libssl-dev libffi-dev python-dev
+apt-get install -y python-setuptools
+apt-get install -y libldns-dev
+apt-get install -y python3-pip
+apt-get install -y python-pip
+apt-get install -y python-dnspython
+apt-get install -y git
+apt-get install -y rename
+apt-get install -y xargs
 
-echo "installing bash_profile aliases from recon_profile"
-git clone https://github.com/nahamsec/recon_profile.git
-cd recon_profile
-cat bash_profile >> ~/.bash_profile
-source ~/.bash_profile
-cd ~/tools/
-echo "done"
+#echo "installing bash_profile aliases from recon_profile"
+#git clone https://github.com/nahamsec/recon_profile.git
+#cd recon_profile
+#cat bash_profile >> ~/.bash_profile
+#source ~/.bash_profile
+#cd ~/tools/
+#echo "done"
 
 
 
 #install go
-add-apt-repository -y ppa:longsleep/golang-backports
-apt update
+#add-apt-repository -y ppa:longsleep/golang-backports
+#apt update
 apt -y install golang-go
 
 #set path
@@ -38,8 +38,8 @@ echo "Setting path values"
 echo "Old paths:"
 echo ' '
 echo $PATH
-export GOROOT=~/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+#export GOROOT=~/go
+#export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PATH=$PATH:/snap/bin
 echo "New paths:"
 echo ' '
