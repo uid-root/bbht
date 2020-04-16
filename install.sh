@@ -28,9 +28,9 @@ echo "done"
 
 
 #install go
-sudo add-apt-repository -y ppa:longsleep/golang-backports
-sudo apt update
-sudo apt -y install golang-go
+add-apt-repository -y ppa:longsleep/golang-backports
+apt update
+apt -y install golang-go
 
 #set path
 echo "Setting path values"
