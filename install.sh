@@ -1,5 +1,6 @@
 #!/bin/bash
-sudo apt-get -y update && sudo apt-get -y -o Dpkg::Options::="--force-confnew" dist-upgrade
+#sudo apt-get -y update && sudo apt-get -y -o Dpkg::Options::="--force-confnew" dist-upgrade
+apt -y update && apt -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
 
 
 sudo apt-get install -y libcurl4-openssl-dev
