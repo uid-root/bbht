@@ -35,11 +35,9 @@ Bug Bounty Hunting Tools is a script to install the most popular tools used whil
 - subbrute
 - gobuster
 - subjack
-
-This script also grabs the aliases created and published here:
-https://github.com/nahamsec/recon_profile
-
-
+- gitrob
+ 
+ 
 # Installing
 - git clone https://github.com/uid-root/bbht.git
 - cd bbht
