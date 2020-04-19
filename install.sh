@@ -273,6 +273,10 @@ go get github.com/haccer/subjack
 echo "done"
 
 
+echo "installing gitrob"
+cd ~/tools/
+go get github.com/michenriksen/gitrob
+echo "done"
 
 
 
