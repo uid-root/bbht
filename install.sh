@@ -2,12 +2,14 @@
 #sudo apt-get -y update && sudo apt-get -y -o Dpkg::Options::="--force-confnew" dist-upgrade
 apt -y update && apt -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
 
-
+add-apt-repository -y ppa:canonical-chromium-builds/stage
+apt update
+apt install -y chromium-browser
 apt install -y libcurl4-openssl-dev
-ap install -y libssl-dev
+apt install -y libssl-dev
 apt install -y jq
 apt install -y ruby-full
-ap install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
+apt install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
 apt install -y build-essential libssl-dev libffi-dev python-dev
 apt install -y python-setuptools
 apt install -y libldns-dev
@@ -280,8 +282,6 @@ echo "installing aquatone"
 cd ~/tools/
 mkdir aquatone
 cd aquatone
-add-apt-repository ppa:canonical-chromium-builds/stage
-apt update && apt -y install chromium-browser
 rm aquatone_linux_*.zip
 wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
 unzip aquatone_linux_*.zip
