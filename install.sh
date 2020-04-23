@@ -74,6 +74,7 @@ echo "done"
 echo "installing Sublist3r"
 git clone https://github.com/aboul3la/Sublist3r.git
 cd Sublist3r*
+#pip3 install -r requirements.txt  <-- pip3 or no?
 pip install -r requirements.txt
 cd ~/tools/
 echo "done"
@@ -314,6 +315,15 @@ cd xxeserv
 go build
 ./xxeserv -h
 echo "done"
+
+
+echo "installing CMSeeK"
+cd ~/tools/
+git clone https://github.com/Tuhinshubhra/CMSeeK
+cd CMSeeK
+pip3 install -r requirements.txt
+echo "done"
+
 
 
 
