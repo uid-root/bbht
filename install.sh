@@ -167,7 +167,12 @@ echo "done"
 
 echo "installing ffuf"
 cd ~/tools/
-go get github.com/ffuf/ffuf
+#go get github.com/ffuf/ffuf   <-- Broken right now
+mkdir ffuf
+cd ffuf
+wget https://github.com/ffuf/ffuf/releases/download/v1.0.2/ffuf_1.0.2_linux_amd64.tar.gz
+tar -xvzf ffuf_1.0.2_linux_amd64.tar.gz
+./ffuf -h
 echo "done"
 
 echo "installing Amass"
