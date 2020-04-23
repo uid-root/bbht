@@ -327,9 +327,8 @@ echo "done"
 
 
 
-echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools/"
-ls -la
-echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! And in ~/go/bin/"
-ls -la ~/go/bin/
+echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools/ and in ~/go/bin/"
+ls ~/tools/
+ls ~/go/bin/
 echo ' '
 echo "One last time: don't forget to set up AWS credentials in ~/.aws/!"
