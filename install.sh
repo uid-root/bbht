@@ -3,47 +3,43 @@
 apt -y update && apt -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
 
 
-apt-get install -y libcurl4-openssl-dev
-apt-get install -y libssl-dev
-apt-get install -y jq
-apt-get install -y ruby-full
-apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
-apt-get install -y build-essential libssl-dev libffi-dev python-dev
-apt-get install -y python-setuptools
-apt-get install -y libldns-dev
-apt-get install -y python3-pip
-apt-get install -y python-pip
-apt-get install -y python-dnspython
-apt-get install -y git
-apt-get install -y rename
-apt-get install -y xargs
+apt install -y libcurl4-openssl-dev
+ap install -y libssl-dev
+apt install -y jq
+apt install -y ruby-full
+ap install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
+apt install -y build-essential libssl-dev libffi-dev python-dev
+apt install -y python-setuptools
+apt install -y libldns-dev
+apt install -y python3-pip
+apt install -y python-pip
+apt install -y python-dnspython
+apt install -y git
+apt install -y rename
+apt install -y xargs
+apt install -y golang-go
+apt install -y dnsutils
+apt install -y nmap
+apt install -y git
+apt install -y curl
+apt install -y wget
+apt install -y ruby
+apt install -y make
 
-#echo "installing bash_profile aliases from recon_profile"
-#git clone https://github.com/nahamsec/recon_profile.git
-#cd recon_profile
-#cat bash_profile >> ~/.bash_profile
-#source ~/.bash_profile
-#cd ~/tools/
-#echo "done"
 
-
-
-#install go
-#add-apt-repository -y ppa:longsleep/golang-backports
-#apt update
-apt -y install golang-go
 
 #set path
-echo "Setting path values"
-echo "Old paths:"
-echo ' '
-echo $PATH
+#echo "Setting path values"
+#echo "Old paths:"
+#echo ' '
+#echo $PATH
 #export GOROOT=~/go
 #export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-export PATH=$PATH:/snap/bin
-echo "New paths:"
-echo ' '
-echo $PATH
+#export PATH=$PATH:/snap/bin
+#echo "New paths:"
+#echo ' '
+#echo $PATH
+
 
 #Don't forget to set up AWS credentials!
 echo "Don't forget to set up AWS credentials!"
@@ -276,6 +272,47 @@ echo "done"
 echo "installing gitrob"
 cd ~/tools/
 go get github.com/michenriksen/gitrob
+echo "done"
+
+
+echo "installing aquatone"
+cd ~/tools/
+mkdir aquatone
+cd aquatone
+add-apt-repository ppa:canonical-chromium-builds/stage
+apt update && apt -y install chromium-browser
+rm aquatone_linux_*.zip
+wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
+unzip aquatone_linux_*.zip
+rm aquatone_linux_*.zip
+./aquatone -h
+echo "done"
+
+
+
+echo "installing shodan cli"
+cd ~/tools/
+pip3 install shodan
+echo "done"
+
+
+echo "installing EyeWitness"
+cd ~/tools/
+git clone https://github.com/FortyNorthSecurity/EyeWitness.git
+cd ~/tools/EyeWitness/Python/setup
+./setup.sh
+pip3 install attrs --upgrade
+sudo apt install -y xvfb
+~/tools/EyeWitness/Python/EyeWitness.py -h
+echo "done"
+
+
+echo "installing xxeserv"
+cd ~/tools/
+git clone https://github.com/staaldraad/xxeserv.git
+cd xxeserv
+go build
+./xxeserv -h
 echo "done"
 
 
